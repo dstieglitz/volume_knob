@@ -1,0 +1,14 @@
+[Unit]
+Description=Volume Knob Service
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/pi/volume_knob/src
+User=pi
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/volume_knob/src/volume_knob.py &> /dev/null
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
